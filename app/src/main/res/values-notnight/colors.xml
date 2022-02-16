@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="splash_text_color">#FFFFFFFF</color>
+    <color name="banner_text_color">#FF000000</color>
+    <color name="bg_color">#FF000000</color>
+    <color name="banner_bg_color">#B3FFFFFF</color>
+</resources>
