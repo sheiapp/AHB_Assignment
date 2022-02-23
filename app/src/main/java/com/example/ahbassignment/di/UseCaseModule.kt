@@ -1,6 +1,6 @@
 package com.example.ahbassignment.di
 
-import com.example.ahbassignment.data.repository.FirebaseRemoteConfigRepository
+import com.example.ahbassignment.repository.FirebaseRemoteConfigRepository
 import com.example.ahbassignment.usecase.RemoteConfigUseCase
 import dagger.Module
 import dagger.Provides

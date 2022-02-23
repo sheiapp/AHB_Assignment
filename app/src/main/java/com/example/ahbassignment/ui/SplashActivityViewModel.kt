@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.ahbassignment.data.model.RemoteConfig
 import com.example.ahbassignment.usecase.RemoteConfigUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -25,7 +26,7 @@ class SplashActivityViewModel @Inject constructor(
     }
 
     private fun checkFirebaseRemoteConfig() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             remoteConfigUseCase.invoke().collect {
                 it?.let {
                     _uiState.value = it

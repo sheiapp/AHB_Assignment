@@ -25,7 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.ahbassignment.KotlinFlowsTheme
 import com.example.ahbassignment.R
 import com.example.ahbassignment.ui.theme.Route
-import com.example.ahbassignment.data.repository.FirebaseRemoteConfigRepository.Companion.timeOutDelayInMillisecond
+import com.example.ahbassignment.repository.FirebaseRemoteConfigRepository.Companion.timeOutDelayInMillisecond
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 

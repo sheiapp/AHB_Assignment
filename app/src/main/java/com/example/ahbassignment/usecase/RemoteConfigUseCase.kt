@@ -1,9 +1,9 @@
 package com.example.ahbassignment.usecase
 
-import com.example.ahbassignment.data.Resource
+import com.example.ahbassignment.util.Resource
 import com.example.ahbassignment.data.model.GetFirebaseConfig
 import com.example.ahbassignment.data.model.RemoteConfig
-import com.example.ahbassignment.data.repository.FirebaseRemoteConfigRepository
+import com.example.ahbassignment.repository.FirebaseRemoteConfigRepository
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
@@ -20,13 +20,13 @@ class RemoteConfigUseCase @Inject constructor(
 
     suspend operator fun invoke(): Flow<RemoteConfig?> {
         val type = object : TypeToken<GetFirebaseConfig>() {}.type
-        var getFirebaseConfig: GetFirebaseConfig? = null
+        var getFirebaseConfig: GetFirebaseConfig?
         var remoteConfig: RemoteConfig? = null
-        when (repository.getFirebaseRemoteConfig()) {
+        when (val firebaseRemoteConfig = repository.getFirebaseRemoteConfig()) {
             is Resource.Success -> {
-                val firebaseRemoteConfig = repository.getFirebaseRemoteConfig().data
+
                 getFirebaseConfig =
-                    Gson().fromJson(firebaseRemoteConfig, type)
+                    Gson().fromJson(firebaseRemoteConfig.data, type)
                 if (getFirebaseConfig?.maintenanceStatus == true) {
                     remoteConfig = RemoteConfig(
                         getFirebaseConfig.maintenanceStatus,

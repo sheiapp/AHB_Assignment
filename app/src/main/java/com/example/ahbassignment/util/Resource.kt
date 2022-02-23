@@ -1,4 +1,4 @@
-package com.example.ahbassignment.data
+package com.example.ahbassignment.util
 
 /**
  * Created by Shaheer cs on 19/02/2022.

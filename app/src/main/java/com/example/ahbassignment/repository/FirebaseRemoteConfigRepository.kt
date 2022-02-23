@@ -1,6 +1,6 @@
-package com.example.ahbassignment.data.repository
+package com.example.ahbassignment.repository
 
-import com.example.ahbassignment.data.Resource
+import com.example.ahbassignment.util.Resource
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
