@@ -27,7 +27,7 @@ class SplashActivityViewModel @Inject constructor(
 
     private fun checkFirebaseRemoteConfig() {
         viewModelScope.launch(Dispatchers.IO) {
-            remoteConfigUseCase.invoke().collect {
+            remoteConfigUseCase().collect {
                 it?.let {
                     _uiState.value = it
                 }
